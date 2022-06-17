@@ -1,0 +1,43 @@
+implementation of 
+@ConfigurationProperties
+
+once you apply it will suggest you to add
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		
+------------------------------------------------------------
+Questions
+
+Q) we wrote @Value on variable, but key is not present  then? 
+A) If key is not present in properties file  
+ and trying to read using @Value then Exception. 
+
+ Q) Can we define same key multiple times with different  values in proeprties ?  
+A) YES. But not recomanded.  
+ If we write key duplicate then last combination is  taken into application. 
+ 
+ Q) Who will load properties file in Spring Boot App? 
+ A) Here in starter class, @SpringBootApplication  will load File using code like: 
+ @PropertySource("classpath:application.properties") 
+** No need of writing this line in Spring Boot. 
+
+ Q) Can we define file with any other name for application.properties? 
+A) YES. But Spring boot will not detect. 
+ You should write manual loading. 
+ ex: 
+ @PropertySource("classpath:abcd.properties") 
+ 
+ Q) What is stereotype Annotation? 
+A) An annotation that indicates to Spring container create object  is called as stereotype Annotation. 
+--stereotype annotation list--- 
+@Component : Creating object 
+@Repository : Creating Object +Db Operations support 
+@Service : creating oject + cal/operation/logics 
+@Controller : creating object + HTTP Req/Resp 
+@RestController : creating object + webservices  
+ 
+ 
