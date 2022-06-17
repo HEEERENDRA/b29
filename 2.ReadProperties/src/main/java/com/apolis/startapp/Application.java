@@ -15,6 +15,7 @@ public class Application {
 		ApplicationContext context = SpringApplication.run(Application.class, args);
 		CustomDataSource source = (CustomDataSource) context.getBean("customDataSource");
 		System.out.println(source);
+		System.out.println("Hello");
 	}
 
 }
